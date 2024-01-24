@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a8ae5a84-77ca-4e46-bb8c-4d3e0719aeca}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="gallery\asgi.py" />
+    <Compile Include="gallery\settings.py" />
+    <Compile Include="gallery\urls.py" />
+    <Compile Include="gallery\views.py" />
+    <Compile Include="gallery\wsgi.py" />
+    <Compile Include="gallery\__init__.py" />
+    <Compile Include="manage.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gallery\static\js\jquery-3.7.1.min.js" />
+    <Content Include="gallery\static\js\photos.js" />
+    <Content Include="gallery\static\photos\2012\1102581_137108186498248_1369519841_o_p.jpg" />
+    <Content Include="gallery\static\photos\2012\1167480_137621219780278_1155702783_o_p.jpg" />
+    <Content Include="gallery\static\photos\2012\1167480_137621223113611_737940360_o_h_p.jpg" />
+    <Content Include="gallery\static\photos\2012\1167480_137621223113611_737940360_o_i.jpg" />
+    <Content Include="gallery\static\photos\2012\IMGP0119.jpg" />
+    <Content Include="gallery\static\photos\2012\IMGP0120.jpg" />
+    <Content Include="gallery\static\photos\2012\IMGP0122.jpg" />
+    <Content Include="gallery\static\photos\2012\IMGP0123.jpg" />
+    <Content Include="gallery\static\photos\2012\IMGP0226_cp.jpg" />
+    <Content Include="gallery\static\photos\2012\IMGP0622_p.jpg" />
+    <Content Include="gallery\static\photos\2023\IMGP0897.jpg" />
+    <Content Include="gallery\static\photos\2023\IMGP0901.jpg" />
+    <Content Include="gallery\static\photos\2023\IMGP0917.jpg" />
+    <Content Include="gallery\static\photos\2023\IMGP0926.jpg" />
+    <Content Include="gallery\static\photos\2023\IMGP0930.jpg" />
+    <Content Include="gallery\static\photos\2023\IMGP0979.jpg" />
+    <Content Include="gallery\templates\gallery1.html" />
+    <Content Include="gallery\templates\Photo.html" />
+    <Content Include="templates\gallery1.html" />
+    <Content Include="templates\Photo.html" />
+    <Content Include="templates\SubGalleries.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="gallery" />
+    <Folder Include="gallery\static\" />
+    <Folder Include="gallery\static\js" />
+    <Folder Include="gallery\static\photos\" />
+    <Folder Include="gallery\static\photos\2012" />
+    <Folder Include="gallery\static\photos\2023" />
+    <Folder Include="gallery\templates" />
+    <Folder Include="templates" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

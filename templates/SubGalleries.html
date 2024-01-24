@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SubGalleries</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h2>SubGalleries</h2>
+	<p>list: {{list}}</p>
+	{% for gallery in list %}
+	<div class="gallery">
+		<a href="/subgallery/{{forloop.counter0}}">{{gallery.dirname}}</a>
+	</div>
+	{%endfor%}
+</body>
+</html>
