@@ -5,6 +5,9 @@ from unittest.mock import patch
 from django.http import HttpResponse
 from django.views import View
 from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.views.generic import ListView
+
 
 PROJECT_ROOT = os.path.dirname(__file__);
 def list(request):
@@ -23,7 +26,7 @@ def get_photos(path):
     else:
         photo_folder = os.path.join(PROJECT_ROOT, 'static/photos');
     print("folders:");
-    print(photo_folder);
+#    print(photo_folder);
     files = os.listdir(photo_folder);
     files.sort();
     return files
@@ -74,7 +77,7 @@ class PhotoView(View):
 			return render(request, "photo.html", {"name": name});
 def showPhoto(request, num, sub):
 	print("showPhoto: ")
-	print(num);
+	print("showPhoto:num: ", num);
 	pathes = get_subgalleries();
 	
 	path = pathes[sub];
@@ -94,6 +97,28 @@ def subgalleriesView(request):
 		sublist.append({"dirname": name, "path": dir  })
 	
 	return render(request, "SubGalleries.html", {"list": sublist });
+def photo_page(request, path_num, page_num):
+	subs = get_subgalleries();
+	path = subs[path_num]
+	print("page:path: ", path);
+	files = get_photos(path);
+	list = [];
+	image_num = 0;
+	image_counter = 0;
+	for name in files:
+		image_num = 0;
+		name = path + "\\" +name;
+		image_num = image_counter;
+		image = {"name":name, "num":image_num}
+		list.append(image);
+		image_counter = image_counter +1;
+#	print("page:files: ", list);
+	pagenator = Paginator(list,15);
+	print("page:pagenator: ", pagenator.get_page(1)[1])
+	print("page:num: ", page_num);
+	page = pagenator.get_page(page_num);
+	return render(request, "list.html", {"page": page, "sub":path_num, "page_num":page_num});
+	
 
 
 

@@ -28,5 +28,6 @@ urlpatterns = [
     path("gallery/", views.subgalleriesView, name="gallery"),
     path("subgallery/<int:path_num>", views.GalleryView.as_view(), name="subgallery"),
 #    path("photo/<int:photo>", views.PhotoView.as_view(), name="photo"),
-    path('photo/<int:num>/<int:sub>', views.showPhoto, name="photo" )
+    path('photo/<int:num>/<int:sub>', views.showPhoto, name="photo" ),
+    path('page/<int:path_num>/<int:page_num>', views.photo_page, name="page")
 ]

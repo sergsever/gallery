@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sergey Lvov</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+	{% load static %}
+	<h3>Page:{{page_num}}</h3>
+	{%for filename in page%}
+		<a href="/photo/{{filename.num}}/{{sub}}"><img src="{% static filename.name %} " id="img-icon" widtch="100" height="70" /></a>
+
+	</div>
+	{%endfor%}
+	<div class="pagination">
+		<span class="step-links">
+			{% if list.has_previous %}
+			<a href="?page=1">&laquo; first</a>
+			<a href="?page={{ page.previous_page_number }}">previous</a>
+			{% endif %}
+
+			<span class="current">
+				Page {{ page.number }} of {{ page.paginator.num_pages }}.
+			</span>
+
+			{% if page.has_next %}
+			<a href="/page/{{sub}}/{{ page.next_page_number }}">next</a>
+			<a href=".page/{{sub}}/{{ page.paginator.num_pages }}">last &raquo;</a>
+			{% endif %}
+		</span>
+	</div>
+</body>
+
+    </div>
+ <h1>Вас приветствует Сергей Львов</h1>
+ <h1>Welcome from Sergey Lvov</h1>
+</body>
+
+</html>

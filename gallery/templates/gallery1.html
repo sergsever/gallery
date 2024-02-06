@@ -15,48 +15,6 @@
     </div>
     {%endfor%}
 
-    {% block extrascripts%}
-    <script type="text/javascript">
-function resizeImage(imgToResize, resizingFactor = 0.5) {
-    console.log("resize image start");
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-
-  const originalWidth = imgToResize.width;
-  const originalHeight = imgToResize.height;
-
-  const canvasWidth = originalWidth * resizingFactor;
-  const canvasHeight = originalHeight * resizingFactor;
-
-  canvas.width = canvasWidth;
-  canvas.height = canvasHeight;
-
-  context.drawImage(
-    imgToResize,
-    0,
-    0,
-    originalWidth * resizingFactor,
-    originalHeight * resizingFactor
-  );
-
-  return canvas.toDataURL();
-}        
-    alert("image script?");
-    console.log("get icon");
-    let icon = document.getElementById("img-icon");
-    icon.src = resizeImage(icon, 0.5);
-    console.log('icon: ' + icon);
-    var canvas = document.createElement("canvas");
-    var ctx = canvas.getContext("2d");
-    var img = new Image();
-    icon.addEventListener('click', function(e){
-        var imgsrc = e.target.getAttribute("src");
-        console.log("imgsrc: " + imgsrc);
-        e.target.widtch = e.target.widtch * 2;
-        e.target.height = e.target.height * 2;
-    })
-    </script>
-    {% endblock %}
 </body>
 
     </div>

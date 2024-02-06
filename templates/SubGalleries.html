@@ -9,7 +9,7 @@
 	<p>list: {{list}}</p>
 	{% for gallery in list %}
 	<div class="gallery">
-		<a href="/subgallery/{{forloop.counter0}}">{{gallery.dirname}}</a>
+		<a href="/page/{{forloop.counter0}}/1">{{gallery.dirname}}</a>
 	</div>
 	{%endfor%}
 </body>

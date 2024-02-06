@@ -48,6 +48,7 @@
     <Content Include="gallery\static\photos\2023\IMGP0979.jpg" />
     <Content Include="gallery\templates\gallery1.html" />
     <Content Include="gallery\templates\Photo.html" />
+    <Content Include="templates\list.html" />
     <Content Include="templates\gallery1.html" />
     <Content Include="templates\Photo.html" />
     <Content Include="templates\SubGalleries.html" />
