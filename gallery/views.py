@@ -84,7 +84,7 @@ def showPhoto(request, num, sub):
 	print("photo path: ", path);
 	
 	files = get_photos(path);
-	name = path + '\\' + files[num];
+	name = "photos/" + os.path.basename(path)  + '/' + files[num];
 	return render(request, "Photo.html", {"name": name, "sub" : sub});
 
 def subgalleriesView(request):
@@ -107,7 +107,7 @@ def photo_page(request, path_num, page_num):
 	image_counter = 0;
 	for name in files:
 		image_num = 0;
-		name = path + "\\" +name;
+		name = "photos/" + os.path.basename(path) + "/" +name;
 		image_num = image_counter;
 		image = {"name":name, "num":image_num}
 		list.append(image);
